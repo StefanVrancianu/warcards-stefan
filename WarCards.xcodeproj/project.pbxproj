@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		87730B5A1C21E5870015165B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 87730B591C21E5870015165B /* main.m */; };
+		87730B5D1C21E5870015165B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87730B5C1C21E5870015165B /* AppDelegate.m */; };
+		87730B601C21E5870015165B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87730B5F1C21E5870015165B /* ViewController.m */; };
+		87730B631C21E5870015165B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87730B611C21E5870015165B /* Main.storyboard */; };
+		87730B651C21E5870015165B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87730B641C21E5870015165B /* Assets.xcassets */; };
+		87730B681C21E5870015165B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87730B661C21E5870015165B /* LaunchScreen.storyboard */; };
+		87730B731C21E5870015165B /* WarCardsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87730B721C21E5870015165B /* WarCardsTests.m */; };
+		87730B7E1C21E5870015165B /* WarCardsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87730B7D1C21E5870015165B /* WarCardsUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		87730B6F1C21E5870015165B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87730B4D1C21E5870015165B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87730B541C21E5870015165B;
+			remoteInfo = WarCards;
+		};
+		87730B7A1C21E5870015165B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87730B4D1C21E5870015165B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87730B541C21E5870015165B;
+			remoteInfo = WarCards;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		87730B551C21E5870015165B /* WarCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WarCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		87730B591C21E5870015165B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		87730B5B1C21E5870015165B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		87730B5C1C21E5870015165B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		87730B5E1C21E5870015165B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		87730B5F1C21E5870015165B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		87730B621C21E5870015165B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		87730B641C21E5870015165B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		87730B671C21E5870015165B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		87730B691C21E5870015165B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87730B6E1C21E5870015165B /* WarCardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WarCardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		87730B721C21E5870015165B /* WarCardsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WarCardsTests.m; sourceTree = "<group>"; };
+		87730B741C21E5870015165B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87730B791C21E5870015165B /* WarCardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WarCardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		87730B7D1C21E5870015165B /* WarCardsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WarCardsUITests.m; sourceTree = "<group>"; };
+		87730B7F1C21E5870015165B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		87730B521C21E5870015165B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87730B6B1C21E5870015165B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87730B761C21E5870015165B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		87730B4C1C21E5870015165B = {
+			isa = PBXGroup;
+			children = (
+				87730B571C21E5870015165B /* WarCards */,
+				87730B711C21E5870015165B /* WarCardsTests */,
+				87730B7C1C21E5870015165B /* WarCardsUITests */,
+				87730B561C21E5870015165B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		87730B561C21E5870015165B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				87730B551C21E5870015165B /* WarCards.app */,
+				87730B6E1C21E5870015165B /* WarCardsTests.xctest */,
+				87730B791C21E5870015165B /* WarCardsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		87730B571C21E5870015165B /* WarCards */ = {
+			isa = PBXGroup;
+			children = (
+				87730B5B1C21E5870015165B /* AppDelegate.h */,
+				87730B5C1C21E5870015165B /* AppDelegate.m */,
+				87730B5E1C21E5870015165B /* ViewController.h */,
+				87730B5F1C21E5870015165B /* ViewController.m */,
+				87730B611C21E5870015165B /* Main.storyboard */,
+				87730B641C21E5870015165B /* Assets.xcassets */,
+				87730B661C21E5870015165B /* LaunchScreen.storyboard */,
+				87730B691C21E5870015165B /* Info.plist */,
+				87730B581C21E5870015165B /* Supporting Files */,
+			);
+			path = WarCards;
+			sourceTree = "<group>";
+		};
+		87730B581C21E5870015165B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				87730B591C21E5870015165B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		87730B711C21E5870015165B /* WarCardsTests */ = {
+			isa = PBXGroup;
+			children = (
+				87730B721C21E5870015165B /* WarCardsTests.m */,
+				87730B741C21E5870015165B /* Info.plist */,
+			);
+			path = WarCardsTests;
+			sourceTree = "<group>";
+		};
+		87730B7C1C21E5870015165B /* WarCardsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				87730B7D1C21E5870015165B /* WarCardsUITests.m */,
+				87730B7F1C21E5870015165B /* Info.plist */,
+			);
+			path = WarCardsUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		87730B541C21E5870015165B /* WarCards */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87730B821C21E5870015165B /* Build configuration list for PBXNativeTarget "WarCards" */;
+			buildPhases = (
+				87730B511C21E5870015165B /* Sources */,
+				87730B521C21E5870015165B /* Frameworks */,
+				87730B531C21E5870015165B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WarCards;
+			productName = WarCards;
+			productReference = 87730B551C21E5870015165B /* WarCards.app */;
+			productType = "com.apple.product-type.application";
+		};
+		87730B6D1C21E5870015165B /* WarCardsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87730B851C21E5870015165B /* Build configuration list for PBXNativeTarget "WarCardsTests" */;
+			buildPhases = (
+				87730B6A1C21E5870015165B /* Sources */,
+				87730B6B1C21E5870015165B /* Frameworks */,
+				87730B6C1C21E5870015165B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				87730B701C21E5870015165B /* PBXTargetDependency */,
+			);
+			name = WarCardsTests;
+			productName = WarCardsTests;
+			productReference = 87730B6E1C21E5870015165B /* WarCardsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		87730B781C21E5870015165B /* WarCardsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87730B881C21E5870015165B /* Build configuration list for PBXNativeTarget "WarCardsUITests" */;
+			buildPhases = (
+				87730B751C21E5870015165B /* Sources */,
+				87730B761C21E5870015165B /* Frameworks */,
+				87730B771C21E5870015165B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				87730B7B1C21E5870015165B /* PBXTargetDependency */,
+			);
+			name = WarCardsUITests;
+			productName = WarCardsUITests;
+			productReference = 87730B791C21E5870015165B /* WarCardsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		87730B4D1C21E5870015165B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Stefan Vrancianu";
+				TargetAttributes = {
+					87730B541C21E5870015165B = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					87730B6D1C21E5870015165B = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 87730B541C21E5870015165B;
+					};
+					87730B781C21E5870015165B = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 87730B541C21E5870015165B;
+					};
+				};
+			};
+			buildConfigurationList = 87730B501C21E5870015165B /* Build configuration list for PBXProject "WarCards" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 87730B4C1C21E5870015165B;
+			productRefGroup = 87730B561C21E5870015165B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				87730B541C21E5870015165B /* WarCards */,
+				87730B6D1C21E5870015165B /* WarCardsTests */,
+				87730B781C21E5870015165B /* WarCardsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		87730B531C21E5870015165B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87730B681C21E5870015165B /* LaunchScreen.storyboard in Resources */,
+				87730B651C21E5870015165B /* Assets.xcassets in Resources */,
+				87730B631C21E5870015165B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87730B6C1C21E5870015165B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87730B771C21E5870015165B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		87730B511C21E5870015165B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87730B601C21E5870015165B /* ViewController.m in Sources */,
+				87730B5D1C21E5870015165B /* AppDelegate.m in Sources */,
+				87730B5A1C21E5870015165B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87730B6A1C21E5870015165B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87730B731C21E5870015165B /* WarCardsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87730B751C21E5870015165B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87730B7E1C21E5870015165B /* WarCardsUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		87730B701C21E5870015165B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87730B541C21E5870015165B /* WarCards */;
+			targetProxy = 87730B6F1C21E5870015165B /* PBXContainerItemProxy */;
+		};
+		87730B7B1C21E5870015165B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87730B541C21E5870015165B /* WarCards */;
+			targetProxy = 87730B7A1C21E5870015165B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		87730B611C21E5870015165B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				87730B621C21E5870015165B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		87730B661C21E5870015165B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				87730B671C21E5870015165B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		87730B801C21E5870015165B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		87730B811C21E5870015165B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		87730B831C21E5870015165B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WarCards/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Dev.WarCards;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		87730B841C21E5870015165B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WarCards/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Dev.WarCards;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		87730B861C21E5870015165B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WarCardsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Dev.WarCardsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WarCards.app/WarCards";
+			};
+			name = Debug;
+		};
+		87730B871C21E5870015165B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WarCardsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Dev.WarCardsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WarCards.app/WarCards";
+			};
+			name = Release;
+		};
+		87730B891C21E5870015165B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WarCardsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Dev.WarCardsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WarCards;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		87730B8A1C21E5870015165B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WarCardsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Dev.WarCardsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WarCards;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		87730B501C21E5870015165B /* Build configuration list for PBXProject "WarCards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87730B801C21E5870015165B /* Debug */,
+				87730B811C21E5870015165B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87730B821C21E5870015165B /* Build configuration list for PBXNativeTarget "WarCards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87730B831C21E5870015165B /* Debug */,
+				87730B841C21E5870015165B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		87730B851C21E5870015165B /* Build configuration list for PBXNativeTarget "WarCardsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87730B861C21E5870015165B /* Debug */,
+				87730B871C21E5870015165B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		87730B881C21E5870015165B /* Build configuration list for PBXNativeTarget "WarCardsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87730B891C21E5870015165B /* Debug */,
+				87730B8A1C21E5870015165B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 87730B4D1C21E5870015165B /* Project object */;
+}
