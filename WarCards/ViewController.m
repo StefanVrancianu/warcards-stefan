@@ -18,6 +18,7 @@ static NSString *kStatePlayerOneKey = @"kForStateOfPlayerOneKey";
 static NSString *kStatePlayerTwoKey = @"kForStateOfPlayerTwoKey";
 static NSString *kRememberDeck1Key = @"kRememberDeck1Key";
 static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
+static NSString *kRememrDeck2Key = @"kRememberDeck2Key";
 
 @interface ViewController ()
 
