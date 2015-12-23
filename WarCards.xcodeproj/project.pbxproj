@@ -15,6 +15,10 @@
 		87730B681C21E5870015165B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87730B661C21E5870015165B /* LaunchScreen.storyboard */; };
 		87730B731C21E5870015165B /* WarCardsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87730B721C21E5870015165B /* WarCardsTests.m */; };
 		87730B7E1C21E5870015165B /* WarCardsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87730B7D1C21E5870015165B /* WarCardsUITests.m */; };
+		87730B8D1C21E5BE0015165B /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 87730B8C1C21E5BE0015165B /* Card.m */; };
+		87730B921C2218290015165B /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87730B911C2218290015165B /* SecondViewController.m */; };
+		87730B951C221CC80015165B /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87730B941C221CC80015165B /* ThirdViewController.m */; };
+		877B23331C284EBC000E8E0D /* PlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877B23321C284EBC000E8E0D /* PlayersViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,14 @@
 		87730B791C21E5870015165B /* WarCardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WarCardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87730B7D1C21E5870015165B /* WarCardsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WarCardsUITests.m; sourceTree = "<group>"; };
 		87730B7F1C21E5870015165B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87730B8B1C21E5BE0015165B /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		87730B8C1C21E5BE0015165B /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		87730B901C2218290015165B /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		87730B911C2218290015165B /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		87730B931C221CC80015165B /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		87730B941C221CC80015165B /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		877B23311C284EBC000E8E0D /* PlayersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayersViewController.h; sourceTree = "<group>"; };
+		877B23321C284EBC000E8E0D /* PlayersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayersViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +93,14 @@
 		87730B4C1C21E5870015165B = {
 			isa = PBXGroup;
 			children = (
+				877B23311C284EBC000E8E0D /* PlayersViewController.h */,
+				877B23321C284EBC000E8E0D /* PlayersViewController.m */,
+				87730B931C221CC80015165B /* ThirdViewController.h */,
+				87730B941C221CC80015165B /* ThirdViewController.m */,
+				87730B901C2218290015165B /* SecondViewController.h */,
+				87730B911C2218290015165B /* SecondViewController.m */,
+				87730B8B1C21E5BE0015165B /* Card.h */,
+				87730B8C1C21E5BE0015165B /* Card.m */,
 				87730B571C21E5870015165B /* WarCards */,
 				87730B711C21E5870015165B /* WarCardsTests */,
 				87730B7C1C21E5870015165B /* WarCardsUITests */,
@@ -270,9 +290,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87730B921C2218290015165B /* SecondViewController.m in Sources */,
 				87730B601C21E5870015165B /* ViewController.m in Sources */,
+				87730B951C221CC80015165B /* ThirdViewController.m in Sources */,
+				877B23331C284EBC000E8E0D /* PlayersViewController.m in Sources */,
 				87730B5D1C21E5870015165B /* AppDelegate.m in Sources */,
 				87730B5A1C21E5870015165B /* main.m in Sources */,
+				87730B8D1C21E5BE0015165B /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +520,7 @@
 				87730B841C21E5870015165B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		87730B851C21E5870015165B /* Build configuration list for PBXNativeTarget "WarCardsTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +529,7 @@
 				87730B871C21E5870015165B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		87730B881C21E5870015165B /* Build configuration list for PBXNativeTarget "WarCardsUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +538,7 @@
 				87730B8A1C21E5870015165B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+@property (nonatomic) NSInteger handsWonbyPlayerTwo;
+@property (nonatomic) NSInteger handsWonbyPlayerOne;
+@property (nonatomic) NSInteger numOfHands;
+
+@property (weak, nonatomic) IBOutlet UILabel *playerTwoNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *playerOneNameLabel;
 
 
 @end
