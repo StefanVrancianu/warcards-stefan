@@ -37,8 +37,6 @@
     self.playerOneNameTextField.delegate = self;
     self.playerTwoNameTextField.delegate = self;
     
-
-    
     
 }
 
@@ -68,8 +66,7 @@
     
 
     [self saveNames];
-    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    delegate.window.rootViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"UINavigationController"];
+    [self.statusNameChangedLabel setText:@"Your names have been changed!"];
     
 }
 

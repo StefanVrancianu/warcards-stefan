@@ -11,6 +11,8 @@
 #import "ThirdViewController.h"
 #import "PlayersViewController.h"
 #import "Card.h"
+#import "AppDelegate.h"
+
 
 static NSString *kDeckArrayKey = @"keyDeckArray";
 static NSString *kDeckRandomKey = @"keyDeckRandom";
@@ -32,8 +34,15 @@ static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
 @property (strong, nonatomic) NSMutableArray *PlayerTwoDeck;
 @property (strong, nonatomic) NSMutableArray *rememberingDeck1;
 @property (strong, nonatomic) NSMutableArray *rememberingDeck2;
-@property (nonatomic) NSInteger conditie;
-
+@property (nonatomic, strong) NSString *myObj;
+@property (nonatomic, strong) NSString *myObj2;
+@property (nonatomic) NSInteger scorePlayerOneI;
+@property (nonatomic) NSInteger scorePlayerTwoI;
+@property (nonatomic) NSInteger condition;
+@property (nonatomic, strong) NSString *forSegueCardOneKind;
+@property (nonatomic) NSInteger forSegueCardOneValue;
+@property (nonatomic, strong) NSString *forSegueCardTwoKind;
+@property (nonatomic) NSInteger forSegueCardTwoValue;
 
 
 @end
@@ -52,16 +61,16 @@ static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
         SecondViewController *svc = segue.destinationViewController;
         svc.ihandsPlayed = self.numOfHands;
         svc.ihandsOwned  = self.handsWonbyPlayerOne;
-        svc.iValueToReceive = [[self.rememberingDeck2 lastObject] valueOfCard];
-        svc.iKindToReceive = [[self.rememberingDeck2 lastObject] kind];
+        svc.iValueToReceive = self.forSegueCardTwoValue;
+        svc.iKindToReceive = self.forSegueCardTwoKind;
         
     }
     else if([segue.identifier isEqualToString:@"gotoThird"]) {
         ThirdViewController *tvc = segue.destinationViewController;
         tvc.ihandsPlayed3 = self.numOfHands;
         tvc.ihandsOwned3 = self.handsWonbyPlayerTwo;
-        tvc.iValueToReceive3 = [[self.rememberingDeck1 lastObject] valueOfCard];
-        tvc.iKindToReceive3 = [[self.rememberingDeck1 lastObject] kind];
+        tvc.iValueToReceive3 = self.forSegueCardOneValue;
+        tvc.iKindToReceive3 = self.forSegueCardOneKind;
     }
     
 }
@@ -72,29 +81,26 @@ static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
         // --------------- Conditia pentru rularea ultimei stari ---------------- //
     if([[NSUserDefaults standardUserDefaults] objectForKey:kDeckArrayKey] != nil){
         [self retrieveStateGame];
+        
+        [self.playerOneNameLabel setText: self.myObj];
+        [self.playerTwoNameLabel setText: self.myObj2];
+
+         self.PlayerTwoCard.image = [UIImage imageNamed: [NSString stringWithFormat:@"%ld_%@", (long)[[self.rememberingDeck2 lastObject] valueOfCard ] , [[self.rememberingDeck2 lastObject] kind]]];
+            
+         self.PlayerOneCard.image = [UIImage imageNamed: [NSString stringWithFormat:@"%ld_%@", (long)[[self.rememberingDeck1 lastObject] valueOfCard ] , [[self.rememberingDeck1 lastObject] kind]]];
+        
+        if( self.condition == 1){
+            [self.ScorePlayerOne setText:[NSString stringWithFormat:@"Score: %ld", self.scorePlayerOneI + 1]];
+            [self.ScorePlayerTwo setText:[NSString stringWithFormat:@"Score: %ld", self.scorePlayerTwoI - 1]];
+        } else {
+            [self.ScorePlayerOne setText:[NSString stringWithFormat:@"Score: %ld", self.scorePlayerOneI - 1]];
+            [self.ScorePlayerTwo setText:[NSString stringWithFormat:@"Score: %ld", self.scorePlayerTwoI + 1]];
+        }
+        
     }
     else {
         [self makeDeck];
         [self shuffleDeck];
-    }
-        // --------------- Cheile pentru numele jucatorilor + setarea numelor ---------------- //
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    id myObj = [userDefaults objectForKey:@"key1"];
-    id myObj2 = [userDefaults objectForKey:@"key2"];
-    
-    [self.playerOneNameLabel setText: myObj];
-    [self.playerTwoNameLabel setText: myObj2];
-    
-    // --------------- Afisarea starii salvate ---------------- //
-    if (self.conditie == 1) {
-        self.PlayerTwoCard.image = [UIImage imageNamed: [NSString stringWithFormat:@"%ld_%@", (long)[[self.rememberingDeck1 lastObject] valueOfCard ] , [[self.rememberingDeck1 objectAtIndex:0] kind]]];
-        
-        self.PlayerOneCard.image = [UIImage imageNamed: [NSString stringWithFormat:@"%ld_%@", (long)[[self.rememberingDeck2 lastObject] valueOfCard ] , [[self.rememberingDeck2 objectAtIndex:0] kind]]];
-    }
-    else if(self.conditie == 0){
-        self.PlayerTwoCard.image = [UIImage imageNamed: [NSString stringWithFormat:@"%ld_%@", (long)[[self.rememberingDeck2 lastObject] valueOfCard ] , [[self.rememberingDeck2 objectAtIndex:0] kind]]];
-        
-        self.PlayerOneCard.image = [UIImage imageNamed: [NSString stringWithFormat:@"%ld_%@", (long)[[self.rememberingDeck1 lastObject] valueOfCard ] , [[self.rememberingDeck1 objectAtIndex:0] kind]]];
     }
 
     // --------------- Abonarea la notificarea AppDidEnterBackground ---------------- //
@@ -109,11 +115,11 @@ static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
     
 }
 
+    //      Crearea pachetului de carti (Deck)      //
+
 - (void) makeDeck {
     
-    //      Crearea pachetului de carti (Deck)      //
-    
-    
+
     self.Deck = [NSMutableArray arrayWithCapacity:52];
     for(int i = 1; i <= 52; i++)
     {
@@ -142,10 +148,9 @@ static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
     
 }
 
+//      Amestecarea pachetului de carti si impartirea lui in doua jumatati egale        //
+
 - (void) shuffleDeck {
-    
-    //      Amestecarea pachetului de carti si impartirea lui in doua jumatati egale        //
-    
     
     NSUInteger count = [self.Deck count];
     if (count > 1)
@@ -175,9 +180,11 @@ static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
     
 }
 
+// --------------- Salvarea datelor cu NSUserDefaults ---------------- //
+
 - (void) saveStateOfTheGame: (NSNotification *)notification {
     
-        // --------------- Salvarea datelor cu NSUserDefaults ---------------- //
+    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     [userDefaults setObject:[NSKeyedArchiver archivedDataWithRootObject:self.Deck] forKey: kDeckArrayKey];
@@ -186,15 +193,26 @@ static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
     [userDefaults setObject:[NSKeyedArchiver archivedDataWithRootObject:self.RandDeck] forKey: kDeckRandomKey];
     [userDefaults setObject:[NSKeyedArchiver archivedDataWithRootObject:self.rememberingDeck1] forKey: kRememberDeck1Key];
     [userDefaults setObject:[NSKeyedArchiver archivedDataWithRootObject:self.rememberingDeck2] forKey: kRememberDeck2Key];
-    
+    [userDefaults setInteger: self.numOfHands forKey:@"numOfHandsKey"];
+    [userDefaults setInteger: self.handsWonbyPlayerOne forKey:@"handsWonByPlayerOneKey"];
+    [userDefaults setInteger: self.handsWonbyPlayerTwo forKey:@"handsWonByPlayerTwoKey"];
+    [userDefaults setInteger: self.scorePlayerOneI forKey:@"scoreP1k"];
+    [userDefaults setInteger: self.scorePlayerTwoI forKey:@"scoreP2k"];
+    [userDefaults setInteger: self.condition forKey:@"conditionKey"];
+    [userDefaults setObject: self.forSegueCardOneKind forKey:@"forSegueCardOneKindKey"];
+    [userDefaults setInteger: self.forSegueCardOneValue forKey:@"forSegueCardOneValueKey"];
+    [userDefaults setObject: self.forSegueCardTwoKind forKey:@"forSegueCardTwoKindKey"];
+    [userDefaults setInteger: self.forSegueCardTwoValue forKey:@"forSegueCardTwoValueKey"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
 
 }
 
+        // --------------- Metoda de recuperare a detelor din UserDefaults ---------------- //
+
 - (void) retrieveStateGame {
     
-        // --------------- Metoda de recuperare a detelor din UserDefaults ---------------- //
+
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     id result = [userDefaults objectForKey: kDeckArrayKey];
@@ -215,6 +233,19 @@ static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
     id result5 = [userDefaults objectForKey: kRememberDeck2Key];
     self.rememberingDeck2 = [NSKeyedUnarchiver unarchiveObjectWithData: result5];
     
+    self.myObj = [userDefaults objectForKey:@"key1"];
+    self.myObj2 = [userDefaults objectForKey:@"key2"];
+    self.numOfHands = [userDefaults integerForKey:@"numOfHandsKey"];
+    self.handsWonbyPlayerOne = [userDefaults integerForKey:@"handsWonByPlayerOneKey"];
+    self.handsWonbyPlayerTwo = [userDefaults integerForKey:@"handsWonByPlayerTwoKey"];
+    self.scorePlayerOneI = [userDefaults integerForKey:@"scoreP1k"];
+    self.scorePlayerTwoI = [userDefaults integerForKey:@"scoreP2k"];
+    self.condition = [userDefaults integerForKey:@"conditionKey"];
+    self.forSegueCardOneKind = [userDefaults objectForKey:@"forSegueCardOneKindKey"];
+    self.forSegueCardOneValue = [userDefaults integerForKey:@"forSegueCardOneValueKey"];
+    self.forSegueCardTwoKind = [userDefaults objectForKey:@"forSegueCardTwoKindKey"];
+    self.forSegueCardTwoValue = [userDefaults integerForKey:@"forSegueCardTwoValueKey"];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -229,6 +260,14 @@ static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
 - (IBAction)buttonOfWar:(id)sender {
     
     NSString *alertMessege;
+    
+    // --------------- Cheile pentru numele jucatorilor + setarea numelor ---------------- //
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    self.myObj = [userDefaults objectForKey:@"key1"];
+    self.myObj2 = [userDefaults objectForKey:@"key2"];
+    
+    [self.playerOneNameLabel setText: self.myObj];
+    [self.playerTwoNameLabel setText: self.myObj2];
     
     
     if([self.PlayerOneDeck count] > 0 && [self.PlayerTwoDeck count] > 0)
@@ -250,7 +289,7 @@ static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
             [self.PlayerTwoDeck addObject:[self.PlayerTwoDeck objectAtIndex:0]];
             [self.PlayerTwoDeck removeObjectAtIndex:0];
             self.handsWonbyPlayerOne++;
-            self.conditie = 1;
+            self.condition = 1;
         }
         else
         {
@@ -261,7 +300,7 @@ static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
             [self.PlayerOneDeck addObject:[self.PlayerOneDeck objectAtIndex:0]];
             [self.PlayerOneDeck removeObjectAtIndex:0];
             self.handsWonbyPlayerTwo++;
-            self.conditie = 0;
+            self.condition = 0;
         }
         
     }
@@ -283,9 +322,34 @@ static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
         
     }
     self.numOfHands++;
-    
+    self.scorePlayerOneI = [self.PlayerOneDeck count];
+    self.scorePlayerTwoI = [self.PlayerTwoDeck count];
+    self.forSegueCardOneKind = [[self.rememberingDeck1 lastObject] kind];
+    self.forSegueCardOneValue = [[self.rememberingDeck1 lastObject] valueOfCard];
+    self.forSegueCardTwoKind = [[self.rememberingDeck2 lastObject] kind];
+    self.forSegueCardTwoValue = [[self.rememberingDeck2 lastObject] valueOfCard];
     
 }
 
+    //------------------------------- Butonul de reset al jocului -------------------------//
+
+- (IBAction)resetGame:(id)sender {
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults removeObjectForKey:@"keyDeckArray"];
+    [userDefaults removeObjectForKey:@"keyDeckRandom"];
+    [userDefaults removeObjectForKey:@"kForStateOfPlayerOneKey"];
+    [userDefaults removeObjectForKey:@"kForStateOfPlayerTwoKey"];
+    [userDefaults removeObjectForKey:@"kRememberDeck1Key"];
+    [userDefaults removeObjectForKey:@"kRememberDeck2Key"];
+    [userDefaults removeObjectForKey:@"key1"];
+    [userDefaults removeObjectForKey:@"key2"];
+    [userDefaults synchronize];
+    
+    
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    delegate.window.rootViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"UINavigationController"];
+    
+}
 
 @end

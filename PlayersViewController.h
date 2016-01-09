@@ -14,5 +14,6 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *playerOneNameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *playerTwoNameTextField;
+@property (weak, nonatomic) IBOutlet UILabel *statusNameChangedLabel;
 
 @end
