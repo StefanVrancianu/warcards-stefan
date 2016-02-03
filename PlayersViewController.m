@@ -34,8 +34,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.playerOneNameTextField.delegate = self;
-    self.playerTwoNameTextField.delegate = self;
+    playerOneNameTextField.delegate = self;
+    playerTwoNameTextField.delegate = self;
     
     
 }
@@ -47,24 +47,22 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self.delegate setNameForPlayerOne: playerOneNameTextField.text andPlayerTwo: playerTwoNameTextField.text];
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)submit:(id)sender {
     
-
     [self saveNames];
     [self.statusNameChangedLabel setText:@"Your names have been changed!"];
     

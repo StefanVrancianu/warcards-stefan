@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="o0A-4m-CZz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="o0A-4m-CZz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
@@ -36,14 +36,11 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBq-W1-LyC">
                                 <rect key="frame" x="133" y="323" width="108" height="69"/>
-                                <state key="normal" image="button1"/>
+                                <state key="normal" image="button-play"/>
                                 <connections>
                                     <action selector="buttonOfWar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FwT-J8-qzq"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backcard" translatesAutoresizingMaskIntoConstraints="NO" id="h1r-hQ-hVI">
-                                <rect key="frame" x="125" y="105" width="124" height="181"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDl-Gq-o5W">
                                 <rect key="frame" x="9" y="120" width="108" height="28"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
@@ -68,13 +65,23 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backcard" translatesAutoresizingMaskIntoConstraints="NO" id="h1r-hQ-hVI">
+                                <rect key="frame" x="125" y="105" width="124" height="181"/>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZyY-5K-ZNI">
+                                <rect key="frame" x="135" y="323" width="104" height="67"/>
+                                <state key="normal" image="button1"/>
+                                <connections>
+                                    <action selector="WarButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C6d-p4-oIy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="89p-kc-MCw">
                         <barButtonItem key="leftBarButtonItem" title="Change Names" id="6fC-i1-y7Z">
                             <connections>
-                                <segue destination="FQ7-Bx-BVq" kind="show" id="W03-WN-Aj6"/>
+                                <segue destination="FQ7-Bx-BVq" kind="show" identifier="gotoChangeName" id="W03-WN-Aj6"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Reset Game" id="zpe-cx-c1a">
@@ -89,6 +96,7 @@
                         <outlet property="PlayerTwoCard" destination="h1r-hQ-hVI" id="Ye6-D6-OLU"/>
                         <outlet property="ScorePlayerOne" destination="QV8-QC-uBJ" id="mCg-Xo-kZV"/>
                         <outlet property="ScorePlayerTwo" destination="Hzz-CW-buR" id="bdQ-bs-H3x"/>
+                        <outlet property="WarButton" destination="ZyY-5K-ZNI" id="iTA-cW-FNJ"/>
                         <outlet property="playerOneNameLabel" destination="Elo-v3-T5Y" id="EnS-GK-ziA"/>
                         <outlet property="playerTwoNameLabel" destination="lDl-Gq-o5W" id="LWC-q9-f01"/>
                     </connections>
@@ -163,6 +171,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w6O-4M-c9K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="700.5" y="73.5"/>
+        </scene>
+        <!--War View Controller-->
+        <scene sceneID="0Kn-vW-QLW">
+            <objects>
+                <viewController storyboardIdentifier="WarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sSW-Sr-17G" customClass="WarViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mDt-Nv-3J3"/>
+                        <viewControllerLayoutGuide type="bottom" id="tPg-8A-bqg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rtk-0g-FuD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="74f-MU-KBH">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eC-mb-Hhw">
+                                <rect key="frame" x="257" y="458" width="108" height="28"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwe-Wh-JFM">
+                                <rect key="frame" x="257" y="121" width="108" height="28"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNA-gS-bMJ">
+                                <rect key="frame" x="9" y="462" width="108" height="31"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backcard" translatesAutoresizingMaskIntoConstraints="NO" id="gt0-Fq-mTS">
+                                <rect key="frame" x="125" y="441" width="124" height="181"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backcard" translatesAutoresizingMaskIntoConstraints="NO" id="Nhx-so-hlT">
+                                <rect key="frame" x="125" y="105" width="124" height="181"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcI-kh-lk5">
+                                <rect key="frame" x="9" y="133" width="108" height="28"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDj-2p-5Ka">
+                                <rect key="frame" x="135" y="336" width="105" height="60"/>
+                                <state key="normal" image="button-play"/>
+                                <connections>
+                                    <action selector="warButton:" destination="sSW-Sr-17G" eventType="touchUpInside" id="8jL-38-7cr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="playerOneWarCard" destination="gt0-Fq-mTS" id="GLY-0E-cVO"/>
+                        <outlet property="playerOneWarName" destination="tNA-gS-bMJ" id="mui-2e-vKx"/>
+                        <outlet property="playerOneWonLabel" destination="0eC-mb-Hhw" id="jQJ-Iq-Vn7"/>
+                        <outlet property="playerTwoWarCard" destination="Nhx-so-hlT" id="Byy-qp-xzG"/>
+                        <outlet property="playerTwoWarName" destination="HcI-kh-lk5" id="1Cc-gr-hqo"/>
+                        <outlet property="playerTwoWonLabel" destination="xwe-Wh-JFM" id="3on-Tr-JEO"/>
+                        <outlet property="warButton" destination="VDj-2p-5Ka" id="94D-ws-mQM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cA4-t6-Wnp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="700.5" y="-707.5"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="KM2-KX-gHN">
@@ -244,7 +321,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="f6p-Lt-cfE">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="-1" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player one name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiY-nU-PNm">
                                 <rect key="frame" x="58" y="168" width="206" height="30"/>
@@ -328,6 +405,7 @@
     <resources>
         <image name="backcard" width="169" height="235"/>
         <image name="background" width="540" height="960"/>
+        <image name="button-play" width="132" height="60"/>
         <image name="button1" width="150" height="84"/>
     </resources>
 </document>

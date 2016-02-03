@@ -12,6 +12,7 @@
 #import "PlayersViewController.h"
 #import "Card.h"
 #import "AppDelegate.h"
+#import "WarViewController.h"
 
 
 static NSString *kDeckArrayKey = @"keyDeckArray";
@@ -21,7 +22,7 @@ static NSString *kStatePlayerTwoKey = @"kForStateOfPlayerTwoKey";
 static NSString *kRememberDeck1Key = @"kRememberDeck1Key";
 static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
 
-@interface ViewController ()
+@interface ViewController () <PlayersViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *viewC;
 @property (weak, nonatomic) IBOutlet UIImageView *PlayerTwoCard;
@@ -34,8 +35,6 @@ static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
 @property (strong, nonatomic) NSMutableArray *PlayerTwoDeck;
 @property (strong, nonatomic) NSMutableArray *rememberingDeck1;
 @property (strong, nonatomic) NSMutableArray *rememberingDeck2;
-@property (nonatomic, strong) NSString *myObj;
-@property (nonatomic, strong) NSString *myObj2;
 @property (nonatomic) NSInteger scorePlayerOneI;
 @property (nonatomic) NSInteger scorePlayerTwoI;
 @property (nonatomic) NSInteger condition;
@@ -43,6 +42,7 @@ static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
 @property (nonatomic) NSInteger forSegueCardOneValue;
 @property (nonatomic, strong) NSString *forSegueCardTwoKind;
 @property (nonatomic) NSInteger forSegueCardTwoValue;
+@property (nonatomic, assign) BOOL conditionShow;
 
 
 @end
@@ -51,6 +51,13 @@ static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
 
 @synthesize playerOneNameLabel;
 @synthesize playerTwoNameLabel;
+
+- (void)setNameForPlayerOne: (NSString *)namePlayerOne andPlayerTwo: (NSString *)namePlayerTwo {
+    
+    self.playerOneNameLabel.text = namePlayerOne;
+    self.playerTwoNameLabel.text = namePlayerTwo;
+    
+}
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
@@ -72,8 +79,33 @@ static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
         tvc.iValueToReceive3 = self.forSegueCardOneValue;
         tvc.iKindToReceive3 = self.forSegueCardOneKind;
     }
+    else if ([[segue destinationViewController] isKindOfClass:[PlayersViewController class]]) {
+        PlayersViewController *pvc = (PlayersViewController *)[segue destinationViewController];
+        pvc.delegate = self;
+    }
     
 }
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    self.conditionShow = [userDefaults boolForKey: @"kCondition"];
+    
+    if(self.conditionShow == TRUE)
+    {
+        self.PlayerOneCard.image = [UIImage imageNamed: [NSString stringWithFormat:@"%ld_%@", (long)[[self.PlayerOneDeck objectAtIndex:1] valueOfCard ] , [[self.PlayerOneDeck objectAtIndex:1] kind]]];
+        
+        self.PlayerTwoCard.image = [UIImage imageNamed: [NSString stringWithFormat:@"%ld_%@", (long)[[self.PlayerTwoDeck objectAtIndex:1] valueOfCard ] , [[self.PlayerTwoDeck objectAtIndex:1] kind]]];
+    }
+    else
+    {
+        self.PlayerOneCard.image = [UIImage imageNamed: [NSString stringWithFormat:@"%ld_%@", (long)[[self.PlayerOneDeck objectAtIndex:2] valueOfCard ] , [[self.PlayerOneDeck objectAtIndex:2] kind]]];
+        
+        self.PlayerTwoCard.image = [UIImage imageNamed: [NSString stringWithFormat:@"%ld_%@", (long)[[self.PlayerTwoDeck objectAtIndex:2] valueOfCard ] , [[self.PlayerTwoDeck objectAtIndex:2] kind]]];
+    }
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -162,8 +194,8 @@ static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
     }
     
     self.RandDeck  = [NSMutableArray arrayWithArray:self.Deck];
-    self.PlayerOneDeck = [NSMutableArray arrayWithCapacity:52];
-    self.PlayerTwoDeck = [NSMutableArray arrayWithCapacity:52];
+    self.PlayerOneDeck = [[NSMutableArray alloc] init];
+    self.PlayerTwoDeck = [[NSMutableArray alloc] init];
     for(NSUInteger i = 0; i < [self.RandDeck count]; i++)
     {
         if(i < [self.RandDeck count]/2)
@@ -261,14 +293,6 @@ static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
     
     NSString *alertMessege;
     
-    // --------------- Cheile pentru numele jucatorilor + setarea numelor ---------------- //
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    self.myObj = [userDefaults objectForKey:@"key1"];
-    self.myObj2 = [userDefaults objectForKey:@"key2"];
-    
-    [self.playerOneNameLabel setText: self.myObj];
-    [self.playerTwoNameLabel setText: self.myObj2];
-    
     
     if([self.PlayerOneDeck count] > 0 && [self.PlayerTwoDeck count] > 0)
     {
@@ -291,7 +315,7 @@ static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
             self.handsWonbyPlayerOne++;
             self.condition = 1;
         }
-        else
+        else if ([[self.PlayerOneDeck objectAtIndex:0] valueOfCard] > [[self.PlayerTwoDeck objectAtIndex:0] valueOfCard])
         {
             [self.rememberingDeck1 addObject:[self.PlayerOneDeck objectAtIndex:0]];
             [self.rememberingDeck2 addObject:[self.PlayerTwoDeck objectAtIndex:0]];
@@ -301,6 +325,10 @@ static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
             [self.PlayerOneDeck removeObjectAtIndex:0];
             self.handsWonbyPlayerTwo++;
             self.condition = 0;
+        }
+        else
+        {
+            self.WarButton.hidden = NO;
         }
         
     }
@@ -344,12 +372,30 @@ static NSString *kRememberDeck2Key = @"kRememberDeck2Key";
     [userDefaults removeObjectForKey:@"kRememberDeck2Key"];
     [userDefaults removeObjectForKey:@"key1"];
     [userDefaults removeObjectForKey:@"key2"];
+    [userDefaults removeObjectForKey: @"kCondition"];
     [userDefaults synchronize];
     
     
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     delegate.window.rootViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"UINavigationController"];
     
+    
+    //------------------------------- Butonul de razboi al jocului -------------------------//
+    
 }
+- (IBAction)WarButton:(id)sender {
+    
+    self.WarButton.hidden = YES;
+    WarViewController *wvc = [self.storyboard instantiateViewControllerWithIdentifier:@"WarViewController"];
+    wvc.playerOneWarDeck = self.PlayerOneDeck;
+    wvc.playerTwoWarDeck = self.PlayerTwoDeck;
+    wvc.playerOneName = playerOneNameLabel.text;
+    wvc.playerTwoName = playerTwoNameLabel.text;
+    wvc.navigationItem.title = @"WAR!";
+    
+    [self.navigationController pushViewController:wvc animated:YES];
+}
+
+
 
 @end

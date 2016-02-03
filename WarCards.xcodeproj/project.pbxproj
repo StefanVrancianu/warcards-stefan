@@ -19,6 +19,7 @@
 		87730B921C2218290015165B /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87730B911C2218290015165B /* SecondViewController.m */; };
 		87730B951C221CC80015165B /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87730B941C221CC80015165B /* ThirdViewController.m */; };
 		877B23331C284EBC000E8E0D /* PlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877B23321C284EBC000E8E0D /* PlayersViewController.m */; };
+		87E8970E1C596727000E4D37 /* WarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E8970D1C596727000E4D37 /* WarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,14 +56,16 @@
 		87730B791C21E5870015165B /* WarCardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WarCardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87730B7D1C21E5870015165B /* WarCardsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WarCardsUITests.m; sourceTree = "<group>"; };
 		87730B7F1C21E5870015165B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		87730B8B1C21E5BE0015165B /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
-		87730B8C1C21E5BE0015165B /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
-		87730B901C2218290015165B /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		87730B911C2218290015165B /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		87730B931C221CC80015165B /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
-		87730B941C221CC80015165B /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
-		877B23311C284EBC000E8E0D /* PlayersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayersViewController.h; sourceTree = "<group>"; };
-		877B23321C284EBC000E8E0D /* PlayersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayersViewController.m; sourceTree = "<group>"; };
+		87730B8B1C21E5BE0015165B /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = ../Card.h; sourceTree = "<group>"; };
+		87730B8C1C21E5BE0015165B /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = ../Card.m; sourceTree = "<group>"; };
+		87730B901C2218290015165B /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondViewController.h; path = ../SecondViewController.h; sourceTree = "<group>"; };
+		87730B911C2218290015165B /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondViewController.m; path = ../SecondViewController.m; sourceTree = "<group>"; };
+		87730B931C221CC80015165B /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThirdViewController.h; path = ../ThirdViewController.h; sourceTree = "<group>"; };
+		87730B941C221CC80015165B /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThirdViewController.m; path = ../ThirdViewController.m; sourceTree = "<group>"; };
+		877B23311C284EBC000E8E0D /* PlayersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayersViewController.h; path = ../PlayersViewController.h; sourceTree = "<group>"; };
+		877B23321C284EBC000E8E0D /* PlayersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayersViewController.m; path = ../PlayersViewController.m; sourceTree = "<group>"; };
+		87E8970C1C596727000E4D37 /* WarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WarViewController.h; sourceTree = "<group>"; };
+		87E8970D1C596727000E4D37 /* WarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,14 +96,6 @@
 		87730B4C1C21E5870015165B = {
 			isa = PBXGroup;
 			children = (
-				877B23311C284EBC000E8E0D /* PlayersViewController.h */,
-				877B23321C284EBC000E8E0D /* PlayersViewController.m */,
-				87730B931C221CC80015165B /* ThirdViewController.h */,
-				87730B941C221CC80015165B /* ThirdViewController.m */,
-				87730B901C2218290015165B /* SecondViewController.h */,
-				87730B911C2218290015165B /* SecondViewController.m */,
-				87730B8B1C21E5BE0015165B /* Card.h */,
-				87730B8C1C21E5BE0015165B /* Card.m */,
 				87730B571C21E5870015165B /* WarCards */,
 				87730B711C21E5870015165B /* WarCardsTests */,
 				87730B7C1C21E5870015165B /* WarCardsUITests */,
@@ -121,10 +116,9 @@
 		87730B571C21E5870015165B /* WarCards */ = {
 			isa = PBXGroup;
 			children = (
-				87730B5B1C21E5870015165B /* AppDelegate.h */,
-				87730B5C1C21E5870015165B /* AppDelegate.m */,
-				87730B5E1C21E5870015165B /* ViewController.h */,
-				87730B5F1C21E5870015165B /* ViewController.m */,
+				87C5653C1C4F481700F9F6C6 /* Delegates */,
+				87C5653B1C4F480100F9F6C6 /* Custom Classes */,
+				87C5653A1C4F47E300F9F6C6 /* Controllers */,
 				87730B611C21E5870015165B /* Main.storyboard */,
 				87730B641C21E5870015165B /* Assets.xcassets */,
 				87730B661C21E5870015165B /* LaunchScreen.storyboard */,
@@ -158,6 +152,41 @@
 				87730B7F1C21E5870015165B /* Info.plist */,
 			);
 			path = WarCardsUITests;
+			sourceTree = "<group>";
+		};
+		87C5653A1C4F47E300F9F6C6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				877B23311C284EBC000E8E0D /* PlayersViewController.h */,
+				877B23321C284EBC000E8E0D /* PlayersViewController.m */,
+				87730B931C221CC80015165B /* ThirdViewController.h */,
+				87730B941C221CC80015165B /* ThirdViewController.m */,
+				87730B901C2218290015165B /* SecondViewController.h */,
+				87730B911C2218290015165B /* SecondViewController.m */,
+				87730B5E1C21E5870015165B /* ViewController.h */,
+				87730B5F1C21E5870015165B /* ViewController.m */,
+				87E8970C1C596727000E4D37 /* WarViewController.h */,
+				87E8970D1C596727000E4D37 /* WarViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		87C5653B1C4F480100F9F6C6 /* Custom Classes */ = {
+			isa = PBXGroup;
+			children = (
+				87730B8B1C21E5BE0015165B /* Card.h */,
+				87730B8C1C21E5BE0015165B /* Card.m */,
+			);
+			name = "Custom Classes";
+			sourceTree = "<group>";
+		};
+		87C5653C1C4F481700F9F6C6 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				87730B5B1C21E5870015165B /* AppDelegate.h */,
+				87730B5C1C21E5870015165B /* AppDelegate.m */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +327,7 @@
 				87730B5D1C21E5870015165B /* AppDelegate.m in Sources */,
 				87730B5A1C21E5870015165B /* main.m in Sources */,
 				87730B8D1C21E5BE0015165B /* Card.m in Sources */,
+				87E8970E1C596727000E4D37 /* WarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
